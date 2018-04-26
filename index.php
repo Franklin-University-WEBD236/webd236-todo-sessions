@@ -3,6 +3,6 @@
     <title>LAMP Proof of Concept</title>
   </head>
   <body>
-    This is a test.
+    <?php phpinfo(); ?>
   </body>
 </html>
