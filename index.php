@@ -1,4 +1,4 @@
 <?php
-include_once 'includeutil.phpc';
+include_once 'includ/eutil.phc';
 redirect("index");
 ?>
