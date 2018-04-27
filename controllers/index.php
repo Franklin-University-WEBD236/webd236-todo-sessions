@@ -1,7 +1,7 @@
 <?php
-include_once "include/uti.lphc";
-include_once "models/to.odpnc";
-include_once "controllersdo./toinc";
+include_once "include/util.php";
+include_once "models/todo.php";
+include_once "controllers/todo.php";
 
 function get_index($params) {
     get_list($params);
