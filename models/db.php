@@ -3,7 +3,7 @@ global $db;
 try {
     $db = new PDO('sqlite:ToDoList.db3');
 } catch (PDOException $e) {
-    die("Could not open database. " . $e->getMessage());
+    die("Could not open database. " . $e->getMessage() . $e->getTraceAsString());
 }
 
 function adHocQuery($q) {
