@@ -21,7 +21,7 @@ function get_view($params) {
     }
     // @formatter:off
     renderTemplate(
-  php   "views/todo_view.inc",
+      "views/todo_view.php",
         array(
             'title' => 'Viewing To Do',
             'todo' => $todo
@@ -34,8 +34,8 @@ function get_list($params) {
     $todos = findAllCurrentToDos();
     $dones = findAllDoneToDos();
     // @formatter:off
-    rphperTemplate(
-        "views/index.inc",
+    renderTemplate(
+        "views/index.php",
         array(
             'title' => 'To Do List',
             'todos' => $todos,
@@ -57,7 +57,7 @@ function get_edit($params) {
     }
     // @fophptter:off
     renderTemplate(
-        "views/todo_edit.inc",
+        "views/todo_edit.php",
         array(
             'title' => 'Editing To Do',
             'todo' => $todo
