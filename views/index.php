@@ -1,4 +1,4 @@
-%% ../views/header.html %%
+%% views/header.html %%
 <h1>{{$title}}</h1>
 <form action="@@todo/add@@" method="post">
     <label for="description">Description:</label>
@@ -23,4 +23,4 @@
     [[ endforeach; ]]
 </ol>
 
-%% ../views/footer.html %% 
+%% views/footer.html %% 
