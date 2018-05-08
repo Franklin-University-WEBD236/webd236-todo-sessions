@@ -33,7 +33,7 @@
 </ol>
 
         <div class="footer">
-            Copyright &copy; 2012 Todd Whittaker
+            Copyright &copy; 2012 Todd Whittaker <a href="https://glitch.com/edit/#!/remix/tart-cemetery">Remix on Glitch</a>
         </div>
         </div><!-- content div -->
     </body>
