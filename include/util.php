@@ -30,8 +30,7 @@ function relativeUrl($url) {
 }
 
 function __importTemplate($matches) {
-    print_r($matches);
-    $fileName = $matches[1];
+    $fileName = trim($matches[1]);
     if (!file_exists($fileName)) {
         die("Template $fileName doesn't exist.");
     }
