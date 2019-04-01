@@ -1,0 +1,12 @@
+"restart": {
+    "exclude": [
+      "^public/",
+      "^dist/"
+    ],
+    "include": [
+      "\\.ini$",
+      "\\.sh$",
+      "\\.config\\.+",
+      "\\.json"
+    ]
+  }
