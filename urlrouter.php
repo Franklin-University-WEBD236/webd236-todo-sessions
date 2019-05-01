@@ -15,7 +15,9 @@ function routeUrl() {
     $controller = 'controllers/' . $command[0] . '.php';
     $func = strtolower($method) . '_' . (isset($command[1]) ? $command[1] : 'index');
     $params = array_slice($command, 2);
-    
+
+    error_log("Looking for controller ${controller}", 0);
+
     if (file_exists($controller)) {
         require $controller;
         if (function_exists($func)) {
