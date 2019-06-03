@@ -19,6 +19,14 @@ footer {
 icon-links {
   color: rgba(255, 255, 255, 0.89);
 }
-.btn-toolbar {
-  float:right;
+td {
+    width: auto;
+}
+
+td.min {
+    width: 1%;
+    white-space: nowrap;
+}
+.btn-group {
+  display: flex;
 }
