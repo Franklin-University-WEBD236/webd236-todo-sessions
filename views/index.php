@@ -21,52 +21,60 @@
   <div class="col-lg-8 offset-2">
     <h2>Current To Do:</h2>
       
-        <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th>Description</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
+    <table class="table table-striped">
+        <colgroup>
+          <col class="col-md-4">
+          <col class="col-md-7">
+        </colgroup>
+      <thead class="thead-dark">
+        <tr>
+          <th class="col-sm-1">Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
 [[ foreach ($todos as $todo) : ]]
-  <tr>
-    <td><?php echo "{$row['STU_LNAME']}, {$row['STU_FNAME']}" ?></td>
-    <td>
-      <div class="btn-toolbar">
-        <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$row['STU_NUM']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
-        <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$row['STU_NUM']}"?>"><span class="material-icons">mode_edit</span>&nbsp; Edit</button>
-        <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$row['STU_NUM']}"?>"><span class="material-icons">delete</span>&nbsp;Delete</button>
-      </div>
-    </td>
-  </tr>
-<?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <ol>
-      [[ foreach ($todos as $todo) : ]]
-      <li>
-        <a href="@@todo/view/{{$todo['id']}}@@">[View]</a> <a href="@@todo/edit/{{$todo['id']}}@@">[Edit]</a> <a href="@@todo/delete/{{$todo['id']}}@@">[Del]</a> {{$todo['description']}}
-      </li>
-      [[ endforeach; ]]
-    </ol>
-
+        <tr>
+          <td class="col-sm-1"><?php echo "{$todo['description']}" ?></td>
+          <td>
+            <div class="btn-toolbar">
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span>&nbsp; Edit</button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span>&nbsp;Delete</button>
+            </div>
+          </td>
+        </tr>
+[[ endforeach; ]]
+      </tbody>
+    </table>
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-8 offset-2">
     <h2>Past To Do:</h2>
-    <ol>
-      [[ foreach ($dones as $todo) : ]]
-      <li>
-        <a href="@@todo/view/{{$todo['id']}}@@">[View]</a> <a href="@@todo/edit/{{$todo['id']}}@@">[Edit]</a> <a href="@@todo/delete/{{$todo['id']}}@@">[Del]</a> {{$todo['description']}}
-      </li>
-      [[ endforeach; ]]
-    </ol>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+[[ foreach ($dones as $todo) : ]]
+        <tr>
+          <td class="col-md-2"><?php echo "{$todo['description']}" ?></td>
+          <td>
+            <div class="btn-toolbar">
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span>&nbsp; Edit</button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span>&nbsp;Delete</button>
+            </div>
+          </td>
+        </tr>
+[[ endforeach; ]]
+      </tbody>
+    </table>
   </div>
 </div>
           
