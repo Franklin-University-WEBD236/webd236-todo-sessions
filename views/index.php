@@ -9,6 +9,9 @@
         <input type="text" id="description" name="description" />
         <input type="submit" value="Add" />
     </form>
+
+<div class="row">
+  <div class="col-lg-8 offset-2">
     <h2>Current To Do:</h2>
     <ol>
         [[ foreach ($todos as $todo) : ]]
@@ -17,6 +20,9 @@
         </li>
         [[ endforeach; ]]
     </ol>
+
+<div class="row">
+  <div class="col-lg-8 offset-2">
 
     <h2>Past To Do:</h2>
     <ol>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>To do list model 2</title>
-    <link href="static/style.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/static/style.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
@@ -32,6 +32,9 @@
         <input type="text" id="description" name="description" />
         <input type="submit" value="Add" />
     </form>
+
+<div class="row">
+  <div class="col-lg-8 offset-2">
     <h2>Current To Do:</h2>
     <ol>
         <?php  foreach ($todos as $todo) : ?>
@@ -40,6 +43,9 @@
         </li>
         <?php  endforeach; ?>
     </ol>
+
+<div class="row">
+  <div class="col-lg-8 offset-2">
 
     <h2>Past To Do:</h2>
     <ol>

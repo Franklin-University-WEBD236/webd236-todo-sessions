@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>To do list model 2</title>
-    <link href="static/style.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/static/style.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
@@ -22,18 +22,24 @@
           <hr>
         </div>
       </div>
-<h1><?php echo($title); ?></h1>
-<div class='inputs'>
-    <form action="/todo/update" method="post">
-        <input type="hidden" id="id" name="id" value="<?php echo($todo['id']); ?>" />
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value="<?php echo($todo['description']); ?>" />
-        <label for="done">Done?:</label>
-        <input type="text" id="done" name="done" value="<?php echo($todo['done']); ?>" />
-        <input type="submit" value="Update" />
-    <form>
+
+<div class="row">
+  <div class="col-lg-8 offset-2">
+
+    <h1><?php echo($title); ?></h1>
+    <div class='inputs'>
+        <form action="/todo/update" method="post">
+            <input type="hidden" id="id" name="id" value="<?php echo($todo['id']); ?>" />
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="<?php echo($todo['description']); ?>" />
+            <label for="done">Done?:</label>
+            <input type="text" id="done" name="done" value="<?php echo($todo['done']); ?>" />
+            <input type="submit" value="Update" />
+        <form>
+    </div>
+    <p><a href="/index"><< Back</a></p>
+  </div>
 </div>
-<p><a href="/index"><< Back</a></p>
     </div>
     <footer class="footer">
       <div class="container">
