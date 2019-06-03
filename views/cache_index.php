@@ -56,10 +56,10 @@
         <tr>
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
-            <div class="btn-toolbar align-middle" style="float:right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span>&nbsp; Edit</button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span>&nbsp;Delete</button>
+            <div class="btn-toolbar align-middle float-right">
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">description</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
@@ -82,12 +82,12 @@
       <tbody>
 <?php  foreach ($dones as $todo) : ?>
         <tr>
-          <td class="col-md-2"><?php echo "{$todo['description']}" ?></td>
+          <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
-            <div class="btn-toolbar">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span>&nbsp; Edit</button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span>&nbsp;Delete</button>
+            <div class="btn-toolbar align-middle float-right">
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
