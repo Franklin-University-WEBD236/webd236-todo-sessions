@@ -97,7 +97,7 @@ function post_update($params) {
     redirectRelative("todo/view/$id");
 }
 
-function get_delete($params) {
+function post_delete($params) {
     $id = safeParam($params, 0, false);
     if (!$id) {
         die("No todo specified");
