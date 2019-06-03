@@ -45,10 +45,6 @@
     <h2>Current To Do:</h2>
       
     <table class="table table-striped">
-      <colgroup>
-        <col class="col-md-1">
-        <col class="col-md-7">
-      </colgroup>
       <thead class="thead-dark">
         <tr>
           <th>Description</th>
@@ -58,9 +54,9 @@
       <tbody>
 <?php  foreach ($todos as $todo) : ?>
         <tr>
-          <td><?php echo "{$todo['description']}" ?></td>
+          <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
-            <div class="btn-toolbar">
+            <div class="btn-toolbar align-middle" style="float:right">
               <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
               <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="edit.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span>&nbsp; Edit</button>
               <button class="btn btn-secondary d-flex justify-content-center align-content-between addclickhandler" action="delete.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span>&nbsp;Delete</button>
