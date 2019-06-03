@@ -51,13 +51,15 @@ function __cacheName($view) {
 }
 
 function renderTemplate($view, $params) {
+    $useCache = false;
+  
     if (!file_exists($view)) {
         die("File $view doesn't exist.");
     }
     # do we have a cached version?
     clearstatcache();
     $cacheName = __cacheName($view);
-    if (file_exists($cacheName) && (filemtime($cacheName) >= filemtime($view))) {
+    if ($useCache && file_exists($cacheName) && (filemtime($cacheName) >= filemtime($view))) {
         $contents = file_get_contents($cacheName);
     } else {
         # we need to build the file (doesn't exist or template is newer)
