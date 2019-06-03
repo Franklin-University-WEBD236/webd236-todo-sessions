@@ -22,20 +22,20 @@
     <h2>Current To Do:</h2>
       
     <table class="table table-striped">
-        <colgroup>
-          <col class="col-md-4">
-          <col class="col-md-7">
-        </colgroup>
+      <colgroup>
+        <col class="col-md-1">
+        <col class="col-md-7">
+      </colgroup>
       <thead class="thead-dark">
         <tr>
-          <th class="col-sm-1">Description</th>
+          <th>Description</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
 [[ foreach ($todos as $todo) : ]]
         <tr>
-          <td class="col-sm-1"><?php echo "{$todo['description']}" ?></td>
+          <td><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar">
               <button class="btn btn-secondary d-flex justify-content-center align-content-between mr-1 addclickhandler" action="view.php" stu_num="<?php echo "{$todo['id']}"?>"><span class="material-icons">visibility</span>&nbsp;View</button>
