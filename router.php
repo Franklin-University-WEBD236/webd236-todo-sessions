@@ -25,7 +25,16 @@ function routeUrl() {
     if (!function_exists($func)) {
       die("Function '$func' doesn't exist.");
     }
-    $func($params);
+echo "<pre>";
+print_r($_SERVER['REQUEST_METHOD']);
+echo "<br>";
+print_r($_SERVER['REQUEST_URI']);
+echo "<br>";
+print_r($_SERVER['SCRIPT_NAME']);
+echo "<br>";
+echo "</pre>";
+
+  $func($params);
     exit();
 }
 
