@@ -11,10 +11,10 @@ function redirect($url) {
 }
 
 function redirectRelative($url) {
-    redirect(relativeURL($url));
+    redirect(url($url));
 }
 
-function relativeUrl($url) {
+function url($url) {
     $requestURI = explode('/', $_SERVER['REQUEST_URI']);
     $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
 
@@ -40,7 +40,7 @@ function __importTemplate($matches) {
 }
 
 function __resolveRelativeUrls($matches) {
-    return relativeUrl($matches[1]);
+    return url($matches[1]);
 }
 
 function __cacheName($view) {
