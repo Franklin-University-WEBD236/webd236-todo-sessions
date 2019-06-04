@@ -33,7 +33,7 @@ function addToDo($description) {
 
 function toggleDoneToDo($id) {
   $todo = findToDoById($id);
-  updateToDo($id, $todo['description'], !$todo['done']);
+  updateToDo($id, $todo['description'], $todo['done'] ? 0 : 1);
 }
 
 function updateToDo($id, $description, $done) {

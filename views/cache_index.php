@@ -57,9 +57,9 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" action="done.php" todo_id="<?php echo "{$todo['id']}"?>" onclick="submit('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1 addclickhandler" action="edit.php" todo_id="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger addclickhandler" action="delete.php" todo_id="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="submit('/todo/done/<?php echo($todo['id']); ?>','post')"><span class="material-icons">done</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="submit('/todo/edit/<?php echo($todo['id']); ?>'),'get'"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="submit('/todo/delete/<?php echo($todo['id']); ?>'),'post'"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
@@ -85,7 +85,7 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1 addclickhandler" action="done.php" todo_id="<?php echo "{$todo['id']}"?>"><span class="material-icons">done</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="submit('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
               <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1 addclickhandler" action="edit.php" todo_id="<?php echo "{$todo['id']}"?>"><span class="material-icons">mode_edit</span></button>
               <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger addclickhandler" action="delete.php" todo_id="<?php echo "{$todo['id']}"?>"><span class="material-icons">delete</span></button>
             </div>
@@ -98,8 +98,8 @@
 </div>
 
 <script type="text/javascript">
-  function submit(url) {
-    $('<form method="post" action="' + url + '">').appendTo(document.body).submit();
+  function submit(url, method) {
+    $('<form method="' + method + '" action="' + url + '">').appendTo(document.body).submit();
   }
 </script>
 

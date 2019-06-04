@@ -53,7 +53,7 @@ function get_edit($params) {
     }
     $todo = findToDoById($id);
     if (!$todo) {
-        die("No todo found.");
+        die("No todo with id {$id} found.");
     }
     // @fophptter:off
     renderTemplate(
