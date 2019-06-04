@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To do list model 2</title>
+    <title><?php echo($title); ?></title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/style.css" rel="stylesheet" crossorigin="anonymous">
@@ -16,7 +16,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-2">
-          <h1 class="display-4">To do list model 2</h1>
+          <h1 class="display-4"><?php echo($title); ?> model 2</h1>
           <p class="lead">Keep track of things that you need to do.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
@@ -25,7 +25,6 @@
 
 <div class="row">
   <div class="col-lg-8 offset-2">
-    <h1><?php echo($title); ?></h1>
 
       <form action="/todo/add" method="post">
       <div class="form-group">

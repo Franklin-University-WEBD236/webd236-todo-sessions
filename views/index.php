@@ -2,7 +2,6 @@
 
 <div class="row">
   <div class="col-lg-8 offset-2">
-    <h1>{{$title}}</h1>
 
       <form action="@@todo/add@@" method="post">
       <div class="form-group">
