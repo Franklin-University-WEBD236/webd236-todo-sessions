@@ -99,10 +99,7 @@
 
 <script type="text/javascript">
   function submit(url) {
-    $('<form method="post">', {
-      "id": id,
-      "action": url
-    }).appendTo(document.body).submit();
+    $('<form method="post" action="' + url + '">').appendTo(document.body).submit();
   }
 </script>
 

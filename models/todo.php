@@ -31,6 +31,11 @@ function addToDo($description) {
     return $db->lastInsertId();
 }
 
+function toggleDoneToDo($id) {
+  $todo = findToDoById($id);
+  updateToDo($id, $todo['description'], !$todo['done']);
+}
+
 function updateToDo($id, $description, $done) {
     global $db;
     $statement = $db -> prepare("UPDATE todo SET description = ?, done = ? WHERE id = ?");

@@ -66,6 +66,15 @@ function get_edit($params) {
     // @formatter:on
 }
 
+function post_done($params) {
+  $id = safeParam($params, 0, false);
+  if (!$id) {
+      die("No todo specified");
+  }
+  toggleDoneToDo($id);
+  redirectRelative("index");
+}
+
 function post_add($params) {
     if (!isset($_POST['description'])) {
         die("no description given");
