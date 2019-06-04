@@ -33,9 +33,9 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="post('@@todo/done/{{$todo['id']}}@@')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="get('@@todo/edit/{{$todo['id']}}@@')"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="post('@@todo/delete/{{$todo['id']}}@@')"><span class="material-icons">delete</span></button>
+              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('@@todo/done/{{$todo['id']}}@@')"><span class="material-icons">done</span></button>
+              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('@@todo/edit/{{$todo['id']}}@@')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('@@todo/delete/{{$todo['id']}}@@')"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
@@ -61,9 +61,9 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="post('@@todo/done/{{$todo['id']}}@@')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="get('@@todo/edit/{{$todo['id']}}@@')"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="post('@@todo/delete/{{$todo['id']}}@@')"><span class="material-icons">delete</span></button>
+              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('@@todo/done/{{$todo['id']}}@@')"><span class="material-icons">done</span></button>
+              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('@@todo/edit/{{$todo['id']}}@@')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('@@todo/delete/{{$todo['id']}}@@')"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>

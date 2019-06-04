@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><?php echo($title); ?></title>
+    <link rel="shortcut icon" href="https://cdn.glitch.com/7635e9c3-2015-4ec8-967a-16ca37cc9e55%2Ffavicon.ico" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/style.css" rel="stylesheet" crossorigin="anonymous">
@@ -56,9 +57,9 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="post('/todo/delete/<?php echo($todo['id']); ?>')"><span class="material-icons">delete</span></button>
+              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
+              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo($todo['id']); ?>')"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
@@ -84,9 +85,9 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="post('/todo/delete/<?php echo($todo['id']); ?>')"><span class="material-icons">delete</span></button>
+              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
+              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo($todo['id']); ?>')"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
