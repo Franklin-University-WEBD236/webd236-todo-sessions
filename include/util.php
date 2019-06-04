@@ -1,4 +1,12 @@
 <?php
+  
+function safeParam($arr, $index, $default) {
+  if ($arr && isset($arr[$index])) {
+    return $arr[$index];
+  }
+  return $default;
+}
+
 function debug($something) {
     echo "<div class='debug'>\n";
     print_r($something);

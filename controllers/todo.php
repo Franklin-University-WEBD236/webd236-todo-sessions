@@ -2,13 +2,6 @@
 include_once "include/util.php";
 include_once "models/todo.php";
 
-function safeParam($arr, $index, $default) {
-  if ($arr && isset($arr[$index])) {
-    return $arr[$index];
-  }
-  return $default;
-}
-
 function get_view($params) {
   $id = safeParam($params, 0, false);
   if ($id === false) {
