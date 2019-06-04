@@ -10,7 +10,7 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-    <script src="parts/custom.js"></script>
+    <script src="static/custom.js"></script>
   </head>
   <body>
     <div class="container">
@@ -58,7 +58,7 @@
           <td>
             <div class="btn-toolbar align-middle float-right">
               <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="submit('/todo/done/<?php echo($todo['id']); ?>','post')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="submit('/todo/edit/<?php echo($todo['id']); ?>','get')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="location.href='/todo/edit/<?php echo($todo['id']); ?>'"><span class="material-icons">mode_edit</span></button>
               <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="submit('/todo/delete/<?php echo($todo['id']); ?>','post')"><span class="material-icons">delete</span></button>
             </div>
           </td>
@@ -86,8 +86,9 @@
           <td>
             <div class="btn-toolbar align-middle float-right">
               <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-success mr-1" onclick="submit('/todo/done/<?php echo($todo['id']); ?>','post')"><span class="material-icons">done</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="submit('/todo/edit/<?php echo($todo['id']); ?>'),'get'"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="submit('/todo/delete/<?php echo($todo['id']); ?>'),'post'"><span class="material-icons">delete</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-primary mr-1" onclick="submit('/todo/edit/<?php echo($todo['id']); ?>','get')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-secondary d-flex justify-content-center align-content-between bg-danger" onclick="submit('/todo/delete/<?php echo($todo['id']); ?>','post')"><span class="material-icons">delete</span></button>
+            </div>
             </div>
           </td>
         </tr>
@@ -98,8 +99,8 @@
 </div>
 
 <script type="text/javascript">
-  function submit(url, method) {
-    $('<form method="' + method + '" action="' + url + '">').appendTo(document.body).submit();
+  function submit(url) {
+    $('<form method="post" action="' + url + '" />').appendTo(document.body).submit();
   }
 </script>
           
