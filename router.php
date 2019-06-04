@@ -11,6 +11,8 @@ function routeUrl() {
     }
     # continued...
     
+    error_log("Request URI: " . print_r($requestURI, true)}", 0);
+  
     $command = array_values($requestURI);
     $controller = 'controllers/' . $command[0] . '.php';
     $func = strtolower($method) . '_' . (isset($command[1]) ? $command[1] : 'index');
