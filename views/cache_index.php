@@ -78,7 +78,7 @@
           <td>
             <div class="btn-toolbar align-middle float-right">
               <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
-              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">mode_edit</span></button>
+              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">create</span></button>
               <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo($todo['id']); ?>')"><span class="material-icons">delete</span></button>
             </div>
           </td>
@@ -105,7 +105,7 @@
           <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">done</span></button>
+              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('/todo/done/<?php echo($todo['id']); ?>')"><span class="material-icons">block</span></button>
               <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo($todo['id']); ?>')"><span class="material-icons">mode_edit</span></button>
               <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo($todo['id']); ?>')"><span class="material-icons">delete</span></button>
             </div>
