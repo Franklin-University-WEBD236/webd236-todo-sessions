@@ -30,7 +30,7 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" onclick="post('<?php echo(url(\''/reset');" style="cursor:pointer">Reset DB</a>
+            <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
           </li>
         </ul>
     </nav>
