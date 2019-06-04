@@ -69,7 +69,7 @@ function post_done($params) {
 }
 
 function post_add($params) {
-  $description = safeParam($_POST, 'description');
+  $description = safeParam($_POST, 'description', '');
   if (!$description) {
     die("no description given");
   }
