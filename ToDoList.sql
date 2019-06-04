@@ -1,5 +1,7 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
+DROP TABLE IF EXISTS `todo`;
+
 CREATE TABLE `todo`
 -- This table created by SQLite2009 Pro Enterprise Manager 
 -- Osen Kusnadi - http://www.osenxpsuite.net 
