@@ -12,7 +12,7 @@
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-secondary" onclick="return get('@@index@@')">Cancel</button>
       </div>
     </form>
     <p><a href="@@index@@"><< Back</a></p>
