@@ -26,27 +26,18 @@
 <div class="row">
   <div class="col-lg-8 offset-2">
 
-    <h1><?php echo($title); ?></h1>
-        <form action="/todo/add" method="post">
+    <form action="/todo/edit" method="post">
       <div class="form-group">
-        <label for="description">Add a new todo.</label>
-        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value=""/>
+        <label for="description">Make your changes below</label>
+        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value="<?php echo($todo['description']); ?>" />
+        <input type="hidden" id="done" name="done" value="<?php echo($todo['done']); ?>" />
+        <input type="hidden" id="id" name="id" value="<?php echo($todo['id']); ?>" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-secondary">Cancel</button>
       </div>
     </form>
-
-    <div class='inputs'>
-        <form action="/todo/update" method="post">
-            <input type="hidden" id="id" name="id" value="<?php echo($todo['id']); ?>" />
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" value="<?php echo($todo['description']); ?>" />
-            <label for="done">Done?:</label>
-            <input type="text" id="done" name="done" value="<?php echo($todo['done']); ?>" />
-            <input type="submit" value="Update" />
-        <form>
-    </div>
     <p><a href="/index"><< Back</a></p>
   </div>
 </div>

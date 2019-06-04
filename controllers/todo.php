@@ -87,7 +87,7 @@ function validate_present($elements) {
   return $errors;
 }
 
-function post_update($params) {
+function post_edit($params) {
   $errors = validate_present(array('id', 'description', 'done'));
   if ($errors) {
     die($errors);
@@ -96,7 +96,7 @@ function post_update($params) {
   $description = $_POST['description'];
   $done = $_POST['done'];
   updateToDo($id, $description, $done);
-  redirectRelative("todo/view/$id");
+  redirectRelative("index");
 }
 
 function post_delete($params) {
