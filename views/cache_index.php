@@ -97,6 +97,18 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  function submit(action, id) {
+    $('<form>', {
+      "id": id,
+      "html": '<input type="text" name="id"''
+    }).appendTo(document.body).submit();
+  }
+</script>
+
+
+
+
 <form action="this_is_replaced_by_javascript" method="post" id="todoaction">
   <input type="hidden" id="id" name="id" value="">
 </form>
