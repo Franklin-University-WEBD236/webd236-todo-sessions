@@ -27,12 +27,7 @@ function routeUrl() {
     die("Function '$func' doesn't exist.");
   }
 
-  if ($params) {
-    call_user_func_array($func, $params);
-  } else {
-    $func();
-  }
-  
+  call_user_func_array($func, $params);
   exit();
 }
 
