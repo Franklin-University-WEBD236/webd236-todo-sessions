@@ -1,4 +1,5 @@
 <?php
+
 function routeUrl() {
   $method = $_SERVER['REQUEST_METHOD'];
   $requestURI = explode('/', $_SERVER['REQUEST_URI']);
