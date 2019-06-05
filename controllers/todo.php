@@ -2,9 +2,8 @@
 include_once "include/util.php";
 include_once "models/todo.php";
 
-function get_view($params) {
-  $id = safeParam($params, 0, false);
-  if ($id === false) {
+function get_view($id) {
+  if (!$id) {
     die("No todo id specified");
   }
 
@@ -21,7 +20,7 @@ function get_view($params) {
   );
 }
 
-function get_list($params) {
+function get_list() {
   $todos = findAllCurrentToDos();
   $dones = findAllDoneToDos();
   renderTemplate(
@@ -34,8 +33,7 @@ function get_list($params) {
   );
 }
 
-function get_edit($params) {
-  $id = safeParam($params, 0, false);
+function get_edit($id) {
   if (!$id) {
     die("No todo specified");
   }
@@ -52,8 +50,7 @@ function get_edit($params) {
   );
 }
 
-function post_done($params) {
-  $id = safeParam($params, 0, false);
+function post_done($id) {
   if (!$id) {
       die("No todo specified");
   }
@@ -61,7 +58,7 @@ function post_done($params) {
   redirectRelative("index");
 }
 
-function post_add($params) {
+function post_add() {
   $description = safeParam($_POST, 'description', '');
   if (!$description) {
     die("no description given");
@@ -80,7 +77,7 @@ function validate_present($elements) {
   return $errors;
 }
 
-function post_edit($params) {
+function post_edit() {
   $errors = validate_present(array('id', 'description', 'done'));
   if ($errors) {
     die($errors);
@@ -92,8 +89,7 @@ function post_edit($params) {
   redirectRelative("index");
 }
 
-function post_delete($params) {
-  $id = safeParam($params, 0, false);
+function post_delete($id) {
   if (!$id) {
     die("No todo specified");
   }
