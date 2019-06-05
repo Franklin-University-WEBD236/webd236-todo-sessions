@@ -16,4 +16,5 @@
     </form>
   </div>
 </div>
+
 %% views/footer.html %%
