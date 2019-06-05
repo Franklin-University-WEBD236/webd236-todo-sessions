@@ -78,13 +78,15 @@ function validate_present($elements) {
 }
 
 function post_edit($id) {
-  $errors = validate_present(array('id', 'description', 'done'));
+  if (!$id) {
+    die("No todo specified");
+  }
+  $errors = validate_present(array('description', 'done'));
   if ($errors) {
     die($errors);
   }
-  $id = $_POST['id'];
-  $description = $_POST['description'];
-  $done = $_POST['done'];
+  $description = safeParam($_POST, 'description');
+  $done = safeParam($_POST, 'done');
   updateToDo($id, $description, $done);
   redirectRelative("index");
 }
