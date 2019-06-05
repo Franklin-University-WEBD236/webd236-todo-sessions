@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-lg-8 offset-2">
 
-    <form action="@@todo/edit@@" method="post">
+    <form action="@@todo/edit{{$todo['id']}}@@" method="post">
       <div class="form-group">
         <label for="description">Make your changes below</label>
         <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value="{{$todo['description']}}" />

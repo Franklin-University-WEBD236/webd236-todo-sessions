@@ -77,7 +77,7 @@ function validate_present($elements) {
   return $errors;
 }
 
-function post_edit() {
+function post_edit($id) {
   $errors = validate_present(array('id', 'description', 'done'));
   if ($errors) {
     die($errors);
