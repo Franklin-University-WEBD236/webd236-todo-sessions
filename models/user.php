@@ -9,6 +9,15 @@ function findUserById($id) {
   return $st -> fetch(PDO::FETCH_ASSOC);
 }
 
+function findByEmailAndPassword($email, $password) {
+  global $db;
+  $st = $db -> prepare('SELECT * FROM user WHERE email = ? AND password = ?');
+  $st -> bindParam(1, $email);
+  $st -> bindParam(1, $pasword);
+  $st -> execute();
+  return $st -> fetch(PDO::FETCH_ASSOC);
+}
+
 function findAllUsers() {
   global $db;
   $st = $db -> prepare('SELECT * FROM user ORDER BY id');

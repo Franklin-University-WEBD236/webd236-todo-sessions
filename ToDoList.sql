@@ -15,7 +15,7 @@ INSERT INTO "todo" VALUES('Get this sample app working on Glitch',0,8);
 
 CREATE TABLE `user` (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  email TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
   password TEXT NOT NULL,
   firstName TEXT NOT NULL,
   lastName TEXT NOT NULL
