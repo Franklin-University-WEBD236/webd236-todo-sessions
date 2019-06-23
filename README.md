@@ -1,7 +1,7 @@
-# WEBD 236 To Do app, Model 2 architecture
+# WEBD 236 To Do app with login sessions
 
 Goals are:
-  - Demostrate a model 2 architecture
-  - Work with routing
-  - Work with templating
-  - Explore the model-view-controller pattern
+  - add sessions, cookies
+  - create, update, delete users
+  - login/logout
+  - simple permissions

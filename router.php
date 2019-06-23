@@ -32,4 +32,6 @@ function routeUrl() {
   exit();
 }
 
+session_set_cookie_params(60*60*24*14, '/', $_SERVER['SERVER_NAME'], true, false);
+session_start();
 routeUrl();
