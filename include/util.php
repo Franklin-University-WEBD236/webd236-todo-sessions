@@ -1,6 +1,6 @@
 <?php
   
-function safeParam($arr, $index, $default) {
+function safeParam($arr, $index, $default="") {
   if ($arr && isset($arr[$index])) {
     return $arr[$index];
   }
@@ -35,6 +35,17 @@ function url($url) {
     }
   }
   return implode('/', $dir) . '/' . $url;
+}
+
+function checked(&$something, $compare) {
+  if (isset($something) && (is_array($something) && in_array($compare, $something) || $something == $compare)) {
+    return "checked";
+  }
+  return "";
+}
+
+function value(&$something, $default = "") {
+  return isset($something) ? $something : $default;
 }
 
 function __importTemplate($matches) {

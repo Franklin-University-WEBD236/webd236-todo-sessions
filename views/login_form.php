@@ -5,9 +5,10 @@
 
     <form action="@@login@@" method="post">
       <div class="form-group">
-        <label for="email">email address</label>
-        <input type="text" min="1" id="email" name="email" class="form-control" placeholder="Enter email address" value="{{$todo['description']}}" />
-        <input type="hidden" id="done" name="done" value="{{$todo['done']}}" />
+        <label for="email">Email address</label>
+        <input type="text" min="1" id="email" name="form[email]" class="form-control" placeholder="Enter email address" value="{{value($form['email'])}}" />
+        <label for="password">Password</label>
+        <input type="password" min="1" id="password" name="form[password]" class="form-control" placeholder="Enter password" value="{{value($form['password'])}}" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -9,6 +9,19 @@ function get_index() {
       'title' => 'Log in',
     )
   );
+}
 
+function post_index() {
+  $form = safeParam($_POST, 'form');
+  $email = safeParam($form, 'email');
+  $password = safeParam($form, 'password');
+  
+  renderTemplate(
+    "views/login_form.php",
+    array(
+      'title' => 'Log in',
+      'form' => $form,
+    )
+  );
 }
 ?>
