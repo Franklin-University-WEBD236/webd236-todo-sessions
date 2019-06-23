@@ -17,9 +17,14 @@ CREATE TABLE `user` (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   email TEXT NOT NULL,
   password TEXT NOT NULL,
-  
+  firstName TEXT NOT NULL,
+  lastName TEXT NOT NULL
 );
+INSERT INTO "user" VALUES(1,'nobody@nowhere.com','pa55word','Arya','Stark');
+INSERT INTO "user" VALUES(2,'ironborn@pyke.com','pa55word','Theon','Greyjoy');
+INSERT INTO "user" values(3,'alwayspayshisdebts@casterlyrock.com','Tyrion','Lannister');
 
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('todo',10);
+INSERT INTO "sqlite_sequence" VALUES('user',4);
 COMMIT;
