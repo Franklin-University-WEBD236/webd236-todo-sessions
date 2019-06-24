@@ -74,12 +74,24 @@
 <div class="row">
   <div class="col-lg-12">
 
-    <form action="/user/login" method="post">
+    <form action="/user/register" method="post">
       <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="firstName">First name</label>
+            <input type="text" min="1" id="firstName" name="form[firstName]" class="form-control" placeholder="Enter first name" value="<?php echo(value($form['firstName'])); ?>" />
+          </div>
+          <div class="col">
+            <label for="lastName">First name</label>
+            <input type="text" min="1" id="lastName" name="form[lastName]" class="form-control" placeholder="Enter first name" value="<?php echo(value($form['lastName'])); ?>" />
+          </div>
+        </div>
         <label for="email">Email address</label>
         <input type="text" min="1" id="email" name="form[email]" class="form-control" placeholder="Enter email address" value="<?php echo(value($form['email'])); ?>" />
         <label for="password">Password</label>
-        <input type="password" min="1" id="password" name="form[password]" class="form-control" placeholder="Enter password" value="<?php echo(value($form['password'])); ?>" />
+        <input type="password" min="1" id="password1" name="form[password1]" class="form-control" placeholder="Enter password" value="<?php echo(value($form['password'])); ?>" />
+        <label for="password">Password</label>
+        <input type="password" min="1" id="password2" name="form[password2]" class="form-control" placeholder="Enter password" value="<?php echo(value($form['password'])); ?>" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>

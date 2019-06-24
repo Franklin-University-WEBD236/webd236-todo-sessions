@@ -44,4 +44,14 @@ function get_logout() {
   session_destroy();
   redirect('/index');
 }
+
+function get_register() {
+  renderTemplate(
+    "views/register_form.php",
+    array(
+      'title' => 'Create an account',
+      'form' => $form,
+    )
+  );
+}
 ?>

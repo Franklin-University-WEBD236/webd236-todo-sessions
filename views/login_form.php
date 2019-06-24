@@ -15,6 +15,7 @@
         <button class="btn btn-secondary" onclick="return get('@@index@@')">Cancel</button>
       </div>
     </form>
+    New here? You can <a href="@@user/register@@">create an account</a>.
   </div>
 </div>
 
