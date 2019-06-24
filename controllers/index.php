@@ -4,7 +4,7 @@ include_once "models/todo.php";
 include_once "controllers/todo.php";
 
 function get_index() {
-    get_list();
+  get_list();
 }
 
 ?>

@@ -74,7 +74,11 @@
 <div class="row">
   <div class="col-lg-12">
 
-      <form action="/todo/add" method="post">
+<?php if (!isLoggedIn()): ?>
+  <p>Nothing to see here! <a href="/user/login">Log in</a> to see your ToDos.</p>
+<?php  else: ?>
+  
+    <form action="/todo/add" method="post">
       <div class="form-group">
         <label for="description">Add a new todo.</label>
         <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value=""/>
@@ -141,6 +145,9 @@
 <?php  endforeach; ?>
       </tbody>
     </table>
+
+<?php  endif; ?>
+
   </div>
 </div>
           

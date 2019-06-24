@@ -21,8 +21,9 @@ function get_view($id) {
 }
 
 function get_list() {
-  $todos = findAllCurrentToDos();
-  $dones = findAllDoneToDos();
+  ensureLoggedIn();
+  $todos = findAllCurrentToDos($_SESSION['user']['id']);
+  $dones = findAllDoneToDos($_SESSION['user']['id']);
   renderTemplate(
     "views/index.php",
     array(

@@ -9,24 +9,27 @@ function findToDoById($id) {
   return $st -> fetch(PDO::FETCH_ASSOC);
 }
 
-function findAllCurrentToDos() {
+function findAllCurrentToDos($user_id) {
   global $db;
-  $st = $db -> prepare('SELECT * FROM todo WHERE done = 0 ORDER BY id');
+  $st = $db -> prepare('SELECT * FROM todo WHERE done = 0 AND user_id = :user_id ORDER BY id');
+  $st -> bindParam(':user_id', $user_id);
   $st -> execute();
   return $st -> fetchAll(PDO::FETCH_ASSOC);
 }
 
-function findAllDoneToDos() {
+function findAllDoneToDos($user_id) {
   global $db;
-  $st = $db -> prepare('SELECT * FROM todo WHERE done != 0 ORDER BY id');
+  $st = $db -> prepare('SELECT * FROM todo WHERE done != 0  AND user_id = :user_id ORDER BY id');
+  $st -> bindParam(':user_id', $user_id);
   $st -> execute();
   return $st -> fetchAll(PDO::FETCH_ASSOC);
 }
 
-function addToDo($description) {
+function addToDo($description, $user_id) {
   global $db;
-  $statement = $db -> prepare("INSERT INTO todo (description, done) values (?, 0)");
-  $statement -> bindParam(1, $description);
+  $statement = $db -> prepare("INSERT INTO todo (description, done, user_id) values (:description, 0, :user_id)");
+  $st -> bindParam(':user_id', $user_id);
+  $statement -> bindParam("1, $description);
   $statement -> execute();
   return $db->lastInsertId();
 }
