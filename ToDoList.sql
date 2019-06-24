@@ -20,9 +20,12 @@ CREATE TABLE `user` (
   firstName TEXT NOT NULL,
   lastName TEXT NOT NULL
 );
-INSERT INTO "user" VALUES(1,'nobody@nowhere.com','pa55word','Arya','Stark');
+
+-- it is a very bad, bad idea to store plaintext passwords like this
+-- but we'll get into the solution to that later.
+INSERT INTO "user" VALUES(1,'nobody@nowhere.com','v@larM0rghul1s','Arya','Stark');
 INSERT INTO "user" VALUES(2,'ironborn@pyke.com','pa55word','Theon','Greyjoy');
-INSERT INTO "user" values(3,'alwayspayshisdebts@casterlyrock.com','Tyrion','Lannister');
+INSERT INTO "user" values(3,'alwayspayshisdebts@casterlyrock.com','th3Imp','Tyrion','Lannister');
 
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('todo',10);
