@@ -2,7 +2,7 @@
 include_once "include/util.php";
 include_once "models/user.php";
 
-function get_index() {
+function get_login() {
   renderTemplate(
     "views/login_form.php",
     array(
@@ -17,7 +17,7 @@ INSERT INTO "user" VALUES(2,'ironborn@pyke.com','!r0nBorn','Theon','Greyjoy');
 INSERT INTO "user" values(3,'alwayspayshisdebts@casterlyrock.com','th3Imp','Tyrion','Lannister');
 */
 
-function post_index() {
+function post_login() {
   $form = safeParam($_POST, 'form');
   $email = safeParam($form, 'email');
   $password = safeParam($form, 'password');
@@ -35,7 +35,13 @@ function post_index() {
     );
   } else {
     $_SESSION['user'] = $user;
-    redirect("index");
+    redirect("/index");
   }
+}
+
+function get_logout() {
+  $_SESSION = array();
+  session_destroy();
+  redirect('/index');
 }
 ?>

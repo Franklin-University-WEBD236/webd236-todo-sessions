@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-lg-12">
 
-    <form action="@@login@@" method="post">
+    <form action="@@user/login@@" method="post">
       <div class="form-group">
         <label for="email">Email address</label>
         <input type="text" min="1" id="email" name="form[email]" class="form-control" placeholder="Enter email address" value="{{value($form['email'])}}" />

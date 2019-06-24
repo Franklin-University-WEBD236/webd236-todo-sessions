@@ -34,14 +34,14 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
               <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo($_SESSION['user']['firstName']); ?> <?php echo($_SESSION['user']['lastName']); ?>
             </a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="/user/logout">Logout</a>
             </div>
           </li>
 <?php  else: ?>
           <li class="nav-item">
-            <a class="nav-link" onclick="get('/login');" style="cursor:pointer">Login</a>
+            <a class="nav-link" onclick="get('/user/login');" style="cursor:pointer">Login</a>
           </li>
 <?php  endif; ?>
         </ul>
@@ -50,7 +50,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo($title); ?> sessions and logins</h1>
-          <p class="lead">Keep track of things that you need to do. <?php echo($_SESSION['testing']); ?></p>
+          <p class="lead">Keep track of things that you need to do.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
         </div>

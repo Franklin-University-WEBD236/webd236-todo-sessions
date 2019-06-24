@@ -25,7 +25,7 @@ function routeUrl() {
 
   require $controller;
   if (!function_exists($func)) {
-    die("Function '$func' doesn't exist.");
+    die("Function '$func' doesn't exist in controller '$controller'.");
   }
 
   call_user_func_array($func, $params);
