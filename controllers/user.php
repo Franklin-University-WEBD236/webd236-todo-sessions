@@ -58,6 +58,11 @@ function get_register() {
 function verify_account($form) {
   $errors = array();
   
+  if (!$form) {
+    $errors[] = "No data submitted";
+    return $errors;
+  }
+  
   $email1 = safeParam($form, 'email1');
   if (!$email1) {
     $errors['email1'] = "An email address must be provided";
@@ -88,31 +93,23 @@ function verify_account($form) {
 
 function post_register() {
   $form = safeParam($_POST, 'form');
-  if (!$form) {
+  $errors = verify_account($form);
+  if ($errors) {
     renderTemplate(
       "views/register_form.php",
       array(
         'title' => 'Create an account',
-        'form' => array(),
-        'errors' => array("No data submitted."),
+        'form' => $form,
+        'errors' => $errors,
       )
     );
   } else {
-    $errors = verify_account($form);
-    if ($errors) {
-      renderTemplate(
-        "views/register_form.php",
-        array(
-          'title' => 'Create an account',
-          'form' => $form,
-          'errors' => $errors,
-        )
-      );
-    } else {
-      $id = addUser($form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
-      $_SESSION['user'] = findUserById($id);
-      redirect("/index");
-    }
+    $id = addUser($form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
+    $_SESSION = [];
+    session_destroy();
+    session_start();
+    $_SESSION['user'] = findUserById($id);
+    redirect("/index");
   }
 }
 ?>
