@@ -34,14 +34,14 @@ function post_login() {
       )
     );
   } else {
+    restartSession();
     $_SESSION['user'] = $user;
     redirect("/index");
   }
 }
 
 function get_logout() {
-  $_SESSION = array();
-  session_destroy();
+  restartSession();
   redirect('/index');
 }
 
@@ -105,9 +105,7 @@ function post_register() {
     );
   } else {
     $id = addUser($form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
-    $_SESSION = [];
-    session_destroy();
-    session_start();
+    restartSession();
     $_SESSION['user'] = findUserById($id);
     redirect("/index");
   }
