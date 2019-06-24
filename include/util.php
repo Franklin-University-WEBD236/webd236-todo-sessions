@@ -23,6 +23,19 @@ function restartSession() {
   session_start();
 }
 
+function login($user) {
+  $_SESSION['user'] = $user;
+}
+
+function isLoggedIn() {
+  return isset($_SESSION['user']);
+}
+
+function ensureLoggedIn() {
+  if (!isLoggedIn()) {
+    $_SESSION['redirect'] = 
+  }
+}
 function debug($something) {
   echo "<div class='debug'>\n";
   print_r($something);
