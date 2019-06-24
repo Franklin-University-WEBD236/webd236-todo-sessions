@@ -3,6 +3,7 @@ include_once "include/util.php";
 include_once "models/todo.php";
 
 function get_view($id) {
+  ensureLoggedIn();
   if (!$id) {
     die("No todo id specified");
   }
@@ -11,6 +12,11 @@ function get_view($id) {
   if (!$todo) {
     die("No todo with id $id found.");
   }
+  
+  if ($todo['user_id'] != $_SESSION['user']['id']) {
+    die("Not todo owner");
+  }
+  
   renderTemplate(
     "views/todo_view.php",
     array(
