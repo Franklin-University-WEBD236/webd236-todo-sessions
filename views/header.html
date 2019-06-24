@@ -46,3 +46,18 @@
           <hr>
         </div>
       </div>
+
+[[ if (isset($errors)): ]]
+<div class="row">
+  <div class="col-lg-12">
+    <div class="alert alert-danger">
+      Please fix the following errors:
+      <ul class="mb-0">
+[[ foreach ($errors as $error): ]]
+        <li>{{$error}}</li>
+[[ endforeach; ]]
+      </ul>
+    </div>
+  </div>
+</div>
+[[ endif;]]

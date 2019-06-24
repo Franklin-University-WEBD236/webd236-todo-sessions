@@ -11,9 +11,9 @@ function findUserById($id) {
 
 function findByEmailAndPassword($email, $password) {
   global $db;
-  $st = $db -> prepare('SELECT * FROM user WHERE email = ? AND password = ?');
-  $st -> bindParam(1, $email);
-  $st -> bindParam(1, $pasword);
+  $st = $db -> prepare('SELECT * FROM user WHERE email = :email AND password = :password');
+  $st -> bindParam(':email', $email);
+  $st -> bindParam(':password', $pasword);
   $st -> execute();
   return $st -> fetch(PDO::FETCH_ASSOC);
 }

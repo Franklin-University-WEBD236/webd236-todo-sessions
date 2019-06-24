@@ -24,7 +24,7 @@ CREATE TABLE `user` (
 -- it is a very bad, bad idea to store plaintext passwords like this
 -- but we'll get into the solution to that later.
 INSERT INTO "user" VALUES(1,'nobody@nowhere.com','v@larM0rghul1s','Arya','Stark');
-INSERT INTO "user" VALUES(2,'ironborn@pyke.com','pa55word','Theon','Greyjoy');
+INSERT INTO "user" VALUES(2,'ironborn@pyke.com','!r0nBorn','Theon','Greyjoy');
 INSERT INTO "user" values(3,'alwayspayshisdebts@casterlyrock.com','th3Imp','Tyrion','Lannister');
 
 DELETE FROM sqlite_sequence;

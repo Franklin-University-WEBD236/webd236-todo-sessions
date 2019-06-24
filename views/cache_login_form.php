@@ -41,11 +41,26 @@
       <div class="row">
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo($title); ?> sessions and logins</h1>
-          <p class="lead">Keep track of things that you need to do.</p>
+          <p class="lead">Keep track of things that you need to do. <?php echo($_SESSION['testing']); ?></p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
         </div>
       </div>
+
+<?php  if (isset($errors)): ?>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="alert alert-danger">
+      Please fix the following errors:
+      <ul class="mb-0">
+<?php  foreach ($errors as $error): ?>
+        <li><?php echo($error); ?></li>
+<?php  endforeach; ?>
+      </ul>
+    </div>
+  </div>
+</div>
+<?php  endif;?>
 
 <div class="row">
   <div class="col-lg-12">

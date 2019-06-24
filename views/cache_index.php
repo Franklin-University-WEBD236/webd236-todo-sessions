@@ -47,6 +47,21 @@
         </div>
       </div>
 
+<?php  if (isset($errors)): ?>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="alert alert-danger">
+      Please fix the following errors:
+      <ul class="mb-0">
+<?php  foreach ($errors as $error): ?>
+        <li><?php echo($error); ?></li>
+<?php  endforeach; ?>
+      </ul>
+    </div>
+  </div>
+</div>
+<?php  endif;?>
+
 <div class="row">
   <div class="col-lg-12">
 
