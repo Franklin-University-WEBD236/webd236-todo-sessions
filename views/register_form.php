@@ -32,11 +32,11 @@
         <div class="row">
           <div class="col">
             <label for="password">Password</label>
-            <input type="password" min="1" id="password1" name="form[password1]" class="form-control" placeholder="Enter password" value="{{value($form['password'])}}" />
+            <input type="password" min="1" id="password1" name="form[password1]" class="form-control" placeholder="Enter password" value="{{value($form['password1'])}}" />
           </div>
           <div class="col">
             <label for="password">Verify password</label>
-            <input type="password" min="1" id="password2" name="form[password2]" class="form-control" placeholder="Re-enter password" value="{{value($form['password'])}}" />
+            <input type="password" min="1" id="password2" name="form[password2]" class="form-control" placeholder="Re-enter password" value="{{value($form['password2'])}}" />
           </div>
         </div>
       </div>

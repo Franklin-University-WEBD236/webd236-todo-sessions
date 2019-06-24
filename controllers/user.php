@@ -60,15 +60,27 @@ function verify_account($form) {
   
   $email1 = safeParam($form, 'email1');
   if (!$email1) {
-    errors['email1'] = "An email address must be provided"
+    $errors['email1'] = "An email address must be provided";
   }
   $email2 = safeParam($form, 'email2');
   if ($email1 != $email2) {
-    errors['email2'] = "Email addresses must match"
+    $errors['email2'] = "Email addresses must match";
   }
   $password1 = safeParam($form, 'password1');
   if (!$password1 || strlen($password1) < 8) {
-    errors['password1'] = "Passwords must be at least 8 characters long"
+    $errors['password1'] = "Passwords must be at least 8 characters long";
+  }
+  $password2 = safeParam($form, 'password2');
+  if ($password1 != $password2) {
+    $errors['password1'] = "Passwords must match";
+  }
+  $firstName = safeParam($form, 'firstName');
+  if (!$firstName) {
+    $errors['firstName'] = "A first name must be provided";
+  }
+  $lastName = safeParam($form, 'lastName');
+  if (!$lastName) {
+    $errors['lastName'] = "A last name must be provided";
   }
   
   return $errors;
@@ -76,7 +88,7 @@ function verify_account($form) {
 
 function post_register() {
   $form = safeParam($_POST, 'form');
-  if (!form) {
+  if (!$form) {
     renderTemplate(
       "views/register_form.php",
       array(
@@ -99,6 +111,7 @@ function post_register() {
     } else {
       $id = addUser($form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
       $_SESSION['user'] = findUserById($id);
+      redirect("/index");
     }
   }
 }
