@@ -15,6 +15,8 @@
             <input type="text" min="1" id="lastName" name="form[lastName]" class="form-control" placeholder="Enter last name" value="{{value($form['lastName'])}}" />
           </div>
         </div>
+      </div>
+      <div class="form-group">
         <div class="row">
           <div class="col">
             <label for="email">Email address</label>
@@ -25,6 +27,8 @@
             <input type="text" min="1" id="email2" name="form[email2]" class="form-control" placeholder="Re-enter email address" value="{{value($form['email2'])}}" />
           </div>
         </div>
+      </div>
+      <div class="form-group">
         <div class="row">
           <div class="col">
             <label for="password">Password</label>
@@ -36,12 +40,11 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-4">
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button class="btn btn-secondary" onclick="return get('@@index@@')">Cancel</button>
+        <button class="btn btn-secondary" onclick="get('@@index@@')">Cancel</button>
       </div>
     </form>
-    New here? You can <a href="@@user/register@@">create an account</a>.
   </div>
 </div>
 

@@ -50,8 +50,37 @@ function get_register() {
     "views/register_form.php",
     array(
       'title' => 'Create an account',
-      'form' => $form,
+      'form' => array(),
     )
   );
 }
+
+function get_register() {
+  $form = safeParam($_POST, 'form');
+  if (!form) {
+    renderTemplate(
+      "views/register_form.php",
+      array(
+        'title' => 'Create an account',
+        'form' => array(),
+        'errors' => array("No data submitted."),
+      )
+    );
+  } else {
+    $firstName = safeParam($form('firstName'));
+    $lastName = safeParam($form('lastName'));
+    $email1 = safeParam($form('email1'));
+    $email2 = safeParam($form('email2'));
+    $password1 = safeParam($form('password1'));
+    $password2 = safeP
+  }
+  renderTemplate(
+    "views/register_form.php",
+    array(
+      'title' => 'Create an account',
+      'form' => array(),
+    )
+  );
+}
+
 ?>
