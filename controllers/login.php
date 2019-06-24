@@ -22,10 +22,7 @@ function post_index() {
   $email = safeParam($form, 'email');
   $password = safeParam($form, 'password');
   
-  echo "Looking up $email and $password.";
   $user = findByEmailAndPassword($email, $password);
-  echo "Found user: $user";
-  exit();
   if (!$user) {
     $errors = array("Bad username/password combination");
     renderTemplate(
@@ -37,6 +34,7 @@ function post_index() {
       )
     );
   } else {
+    $_SESSION['user'] = $user;
     redirect("index");
   }
 }
