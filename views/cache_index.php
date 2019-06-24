@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo($title); ?> sessions and logins</h1>
-          <p class="lead">Keep track of things that you need to do.</p>
+          <p class="lead">Keep track of things that you need to do. <?php echo($_SESSION['testing']); ?></p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
         </div>
