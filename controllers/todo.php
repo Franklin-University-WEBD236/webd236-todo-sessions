@@ -44,6 +44,7 @@ function get_list() {
 }
 
 function get_edit($id) {
+  ensureLoggedIn();
   if (!$id) {
     die("No todo specified");
   }
@@ -51,6 +52,11 @@ function get_edit($id) {
   if (!$todo) {
     die("No todo with id {$id} found.");
   }
+  
+  if ($todo['user_id'] != $_SESSION['user']['id']) {
+    die("Not todo owner");
+  }
+
   renderTemplate(
     "views/todo_edit.php",
     array(
@@ -64,6 +70,7 @@ function post_done($id) {
   if (!$id) {
       die("No todo specified");
   }
+  
   toggleDoneToDo($id);
   redirectRelative("index");
 }

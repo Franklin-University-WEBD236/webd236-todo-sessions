@@ -34,9 +34,10 @@ function post_login() {
       )
     );
   } else {
-    $redirect = $_SESSION['redirect'] ? $_SESSION['redirect'] : "/index";
+    $destination = $_SESSION['redirect'] ? $_SESSION['redirect'] : "/index";
     restartSession();
-    redirect($redirect);
+    $_SESSION['user'] = $user;
+    redirect($destination);
   }
 }
 
