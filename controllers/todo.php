@@ -21,9 +21,12 @@ function get_view($id) {
 }
 
 function get_list() {
-  ensureLoggedIn();
-  $todos = findAllCurrentToDos($_SESSION['user']['id']);
-  $dones = findAllDoneToDos($_SESSION['user']['id']);
+  $todos = null;
+  $dones = null;
+  if (isLoggedIn()) {
+    $todos = findAllCurrentToDos($_SESSION['user']['id']);
+    $dones = findAllDoneToDos($_SESSION['user']['id']);
+  }
   renderTemplate(
     "views/index.php",
     array(
@@ -60,11 +63,12 @@ function post_done($id) {
 }
 
 function post_add() {
+  ensureLoggedIn();
   $description = safeParam($_POST, 'description', '');
   if (!$description) {
     die("no description given");
   }
-  addToDo($description);
+  addToDo($description, $_SESSION['user']['id']);
   redirectRelative("index");
 }
 

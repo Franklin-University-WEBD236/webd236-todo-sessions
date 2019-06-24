@@ -6,11 +6,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/style.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
     <script src="/static/custom.js"></script>
   </head>
   <body>
@@ -27,25 +24,55 @@
           <li class="nav-item">
             <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(getenv('PROJECT_DOMAIN')); ?>">Remix</a>
           </li>
-        </ul>
-        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
           </li>
         </ul>
+        <ul class="navbar-nav">
+<?php  if (isset($_SESSION['user'])): ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+              <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo($_SESSION['user']['firstName']); ?> <?php echo($_SESSION['user']['lastName']); ?>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="/user/logout">Logout</a>
+            </div>
+          </li>
+<?php  else: ?>
+          <li class="nav-item">
+            <a class="nav-link" onclick="get('/user/login');" style="cursor:pointer">Login</a>
+          </li>
+<?php  endif; ?>
+        </ul>
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 offset-2">
-          <h1 class="display-4"><?php echo($title); ?> model 2</h1>
+        <div class="col-lg-12">
+          <h1 class="display-4"><?php echo($title); ?></h1>
           <p class="lead">Keep track of things that you need to do.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
         </div>
       </div>
 
+<?php  if (isset($errors)): ?>
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-12">
+    <div class="alert alert-danger">
+      Please fix the following errors:
+      <ul class="mb-0">
+<?php  foreach ($errors as $error): ?>
+        <li><?php echo($error); ?></li>
+<?php  endforeach; ?>
+      </ul>
+    </div>
+  </div>
+</div>
+<?php  endif;?>
+
+<div class="row">
+  <div class="col-lg-12">
 
     <form action="/todo/edit/<?php echo($todo['id']); ?>" method="post">
       <div class="form-group">

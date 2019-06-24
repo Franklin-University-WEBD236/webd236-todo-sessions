@@ -27,10 +27,10 @@ function findAllDoneToDos($user_id) {
 
 function addToDo($description, $user_id) {
   global $db;
-  $statement = $db -> prepare("INSERT INTO todo (description, done, user_id) values (:description, 0, :user_id)");
+  $st = $db -> prepare("INSERT INTO todo (description, done, user_id) values (:description, 0, :user_id)");
+  $st -> bindParam(':description', $description);
   $st -> bindParam(':user_id', $user_id);
-  $statement -> bindParam("1, $description);
-  $statement -> execute();
+  $st -> execute();
   return $db->lastInsertId();
 }
 
@@ -41,17 +41,17 @@ function toggleDoneToDo($id) {
 
 function updateToDo($id, $description, $done) {
   global $db;
-  $statement = $db -> prepare("UPDATE todo SET description = ?, done = ? WHERE id = ?");
-  $statement -> bindParam(1, $description);
-  $statement -> bindParam(2, $done);
-  $statement -> bindParam(3, $id);
+  $statement = $db -> prepare("UPDATE todo SET description = :description, done = :done WHERE id = :id");
+  $statement -> bindParam(':description', $description);
+  $statement -> bindParam(':done', $done);
+  $statement -> bindParam(':id', $id);
   $statement -> execute();
 }
 
 function deleteToDo($id) {
   global $db;
-  $statement = $db -> prepare("DELETE FROM todo WHERE id = ?");
-  $statement -> bindParam(1, $id);
+  $statement = $db -> prepare("DELETE FROM todo WHERE id = :id");
+  $statement -> bindParam(':id', $id);
   $statement -> execute();
 }
 ?>
