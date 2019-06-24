@@ -27,14 +27,27 @@
           <li class="nav-item">
             <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(getenv('PROJECT_DOMAIN')); ?>">Remix</a>
           </li>
-        </ul>
-        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
           </li>
+        </ul>
+        <ul class="navbar-nav">
+<?php  if (isset($_SESSION['user'])): ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo($_SESSION['user']['firstName']); ?> <?php echo($_SESSION['user']['lastName']); ?>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+<?php  else: ?>
           <li class="nav-item">
             <a class="nav-link" onclick="get('/login');" style="cursor:pointer">Login</a>
           </li>
+<?php  endif; ?>
         </ul>
     </nav>
     <div class="container">

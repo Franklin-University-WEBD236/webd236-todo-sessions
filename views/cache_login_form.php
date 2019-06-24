@@ -27,14 +27,20 @@
           <li class="nav-item">
             <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(getenv('PROJECT_DOMAIN')); ?>">Remix</a>
           </li>
-        </ul>
-        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
           </li>
+        </ul>
+        <ul class="navbar-nav">
+<?php  if (isset($_SESSION['user'])): ?>
+          <li class="nav-item">
+            Welcome <?php echo($user['firstName']); ?>
+          </li>
+<?php  else: ?>
           <li class="nav-item">
             <a class="nav-link" onclick="get('/login');" style="cursor:pointer">Login</a>
           </li>
+<?php  endif; ?>
         </ul>
     </nav>
     <div class="container">
