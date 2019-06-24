@@ -27,11 +27,11 @@ function findAllUsers() {
 
 function addUser($email, $password, $firstName="", $lastName="") {
   global $db;
-  $statement = $db -> prepare("INSERT INTO user (email, password, firstName, lastName) values (?, ?, ?, ?)");
-  $statement -> bindParam(1, $email);
-  $statement -> bindParam(2, $password);
-  $statement -> bindParam(3, $firstName);
-  $statement -> bindParam(4, $lastName);
+  $statement = $db -> prepare("INSERT INTO user (email, password, firstName, lastName) values (:email, :password, :firstName, :lastName)");
+  $statement -> bindParam(':email', $email);
+  $statement -> bindParam(':password', $password);
+  $statement -> bindParam(':firstName', $firstName);
+  $statement -> bindParam(':lastName', $lastName);
   $statement -> execute();
   return $db->lastInsertId();
 }

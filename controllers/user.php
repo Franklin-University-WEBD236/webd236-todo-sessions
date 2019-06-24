@@ -55,7 +55,26 @@ function get_register() {
   );
 }
 
-function get_register() {
+function verify_account($form) {
+  $errors = array();
+  
+  $email1 = safeParam($form, 'email1');
+  if (!$email1) {
+    errors['email1'] = "An email address must be provided"
+  }
+  $email2 = safeParam($form, 'email2');
+  if ($email1 != $email2) {
+    errors['email2'] = "Email addresses must match"
+  }
+  $password1 = safeParam($form, 'password1');
+  if (!$password1 || strlen($password1) < 8) {
+    errors['password1'] = "Passwords must be at least 8 characters long"
+  }
+  
+  return $errors;
+}
+
+function post_register() {
   $form = safeParam($_POST, 'form');
   if (!form) {
     renderTemplate(
@@ -67,20 +86,20 @@ function get_register() {
       )
     );
   } else {
-    $firstName = safeParam($form('firstName'));
-    $lastName = safeParam($form('lastName'));
-    $email1 = safeParam($form('email1'));
-    $email2 = safeParam($form('email2'));
-    $password1 = safeParam($form('password1'));
-    $password2 = safeP
+    $errors = verify_account($form);
+    if ($errors) {
+      renderTemplate(
+        "views/register_form.php",
+        array(
+          'title' => 'Create an account',
+          'form' => $form,
+          'errors' => $errors,
+        )
+      );
+    } else {
+      $id = addUser($form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
+      $_SESSION['user'] = findUserById($id);
+    }
   }
-  renderTemplate(
-    "views/register_form.php",
-    array(
-      'title' => 'Create an account',
-      'form' => array(),
-    )
-  );
 }
-
 ?>
