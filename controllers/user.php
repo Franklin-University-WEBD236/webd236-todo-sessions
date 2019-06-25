@@ -53,6 +53,7 @@ function get_register() {
     array(
       'title' => 'Create an account',
       'form' => array(),
+      'action' => url('user/register'),
     )
   );
 }
@@ -103,6 +104,7 @@ function post_register() {
         'title' => 'Create an account',
         'form' => $form,
         'errors' => $errors,
+        'action' => url('user/register'),
       )
     );
   } else {
@@ -121,15 +123,39 @@ function get_edit() {
     "views/user_register.php",
     array(
       'title' => 'Edit your profile',
+      'action' => url("user/edit/${user['id']}"),
       'form' => array(
         'firstName' => $user['firstName'],
         'lastName'  => $user['lastName'],
         'email1'    => $user['email'],
         'email2'    => $user['email'],
-        'firstName' => $user['firstName'],
-        'firstName' => $user['firstName'],
+        'password1' => $user['password'],
+        'password2' => $user['password'],
       )
     )
   );
+}
+
+function post_edit($id) {
+  ensureLoggedIn();
+  $user=$_SESSION['user'];
+  if ($id != $user['id']) {
+    die("Can't edit somebody else.");
+  }
+  $form = safeParam($_POST, 'form');
+  $errors = verify_account($form);
+  if ($errors) {
+    renderTemplate(
+      "views/user_register.php",
+      array(
+        'title' => 'Edit your profile',
+        'form' => $form,
+        'errors' => $errors,
+        'action' => url("user/edit/${user['id']}"),
+      )
+    );
+  } else {
+    die("do the update.");
+  }
 }
 ?>

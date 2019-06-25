@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-lg-12">
 
-    <form action="@@user/register@@" method="post">
+    <form action="{{$action}}" method="post">
       <div class="form-group">
         <div class="row">
           <div class="col">
