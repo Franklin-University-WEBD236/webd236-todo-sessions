@@ -30,3 +30,10 @@ td.min {
 .btn-group {
   display: flex;
 }
+
+.flash-message {
+    position: fixed;
+    top: 5px; 
+    left:2%;
+    width: 96%;
+}
