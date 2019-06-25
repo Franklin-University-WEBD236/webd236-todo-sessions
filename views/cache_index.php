@@ -79,7 +79,7 @@
   </button>
 </div>
 <script type="text/javascript">
-  $("#flash").fadeOut(3000);
+  $("#flash").fadeIn("fast").delay(3000).fadeOut("fast");
 </script>
 <?php  
    unset($_SESSION['flash']);

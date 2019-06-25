@@ -33,7 +33,8 @@ td.min {
 
 .flash-message {
     position: fixed;
-    top: 5px; 
-    left:2%;
-    width: 96%;
+    top: 5em; 
+    left: 25%;
+    width: 50%;
+    display: none;
 }
