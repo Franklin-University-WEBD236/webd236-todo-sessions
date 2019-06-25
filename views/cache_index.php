@@ -94,8 +94,15 @@
 
 <?php if (!isLoggedIn()): ?>
   <h1>Welcome to the To Do List!</h1>
-  <p>
-  <p>Nothing to see here! <a href="/user/login">Log in</a> to see your ToDos.</p>
+  <p>The To Do List is your one stop for keeping track of all the things you need to do in life. You can
+    easily create, modify, delete, and mark as done anything you choose to enter into this system. However, you can only
+    vier or enter things into the system if you are logged in. So, feel free to <a href="/user/login">log in</a>
+    or <a href="/user/register">register</a> for an account.</p>
+  <div class="form-group mt-4">
+    <button class="btn btn-primary" onclick="get('/user/login')">Log in</button>
+    <button class="btn btn-secondary" onclick="get('/user/register')">Register</button>
+  </div>
+
 <?php  else: ?>
   
     <form action="/todo/add" method="post">
