@@ -82,7 +82,7 @@ function post_add() {
     die("no description given");
   }
   addToDo($description, $_SESSION['user']['id']);
-  $_SESSION['flash'] = "Successfully added. sdlkjlaskdjf asdklfjasldkfjasl dkjfalsdkfjalsdkfjlsdkfjsladkfjsladkfjls adkfjas ldkfjsadfkjhsd fkjdhj hsdkjfh ksjdhf ksjdhf ksjadhf ksjadhf ksjadhf ksjdhfk jsadhfk jsdhfk sjdhf ksajdhfskdjfh kjsdhf ksjdhf";
+  flash("Successfully added.");
   redirectRelative("index");
 }
 
@@ -119,6 +119,7 @@ function post_delete($id) {
     die("No todo found.");
   }
   deleteToDo($id);
+  flash("Deleted.");
   redirectRelative("index");
 }
 

@@ -112,4 +112,24 @@ function post_register() {
     redirect("/index");
   }
 }
+
+function get_edit() {
+  ensureLoggedIn();
+  $user = $_SESSION['user'];
+  
+  renderTemplate(
+    "views/user_register.php",
+    array(
+      'title' => 'Edit your profile',
+      'form' => array(
+        'firstName' => $user['firstName'],
+        'lastName'  => $user['lastName'],
+        'email1'    => $user['email'],
+        'email2'    => $user['email'],
+        'firstName' => $user['firstName'],
+        'firstName' => $user['firstName'],
+      )
+    )
+  );
+}
 ?>

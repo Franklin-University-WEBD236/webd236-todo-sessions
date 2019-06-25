@@ -35,7 +35,7 @@
               <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo($_SESSION['user']['firstName']); ?> <?php echo($_SESSION['user']['lastName']); ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="/user/edit">Edit profile</a>
               <a class="dropdown-item" href="/user/logout">Logout</a>
             </div>
           </li>
@@ -84,7 +84,7 @@
   });
 </script>
 <?php  
-   //unset($_SESSION['flash']);
+   unset($_SESSION['flash']);
    endif;
 ?>
 

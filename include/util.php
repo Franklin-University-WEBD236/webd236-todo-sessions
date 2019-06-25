@@ -11,6 +11,10 @@ function safeParam($arr, $index, $default="") {
   return $default;
 }
 
+function flash($message) {
+  $_SESSION['flash'] = $message;
+}
+
 function restartSession() {
   //remove PHPSESSID from browser
   if ( isset( $_COOKIE[session_name()] ) ) {
