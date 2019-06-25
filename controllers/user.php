@@ -155,7 +155,10 @@ function post_edit($id) {
       )
     );
   } else {
-    die("do the update.");
+    updateUser($user['id'], $form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
+    $_SESSION['user'] = findUserById($user['id']);
+    flash("Profile updated");
+    redirectRelative("index");
   }
 }
 ?>
