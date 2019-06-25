@@ -4,7 +4,7 @@ include_once "models/user.php";
 
 function get_login() {
   renderTemplate(
-    "views/login_form.php",
+    "views/user_login.php",
     array(
       'title' => 'Log in',
     )
@@ -26,7 +26,7 @@ function post_login() {
   if (!$user) {
     $errors = array("Bad username/password combination");
     renderTemplate(
-      "views/login_form.php",
+      "views/user_login.php",
       array(
         'title' => 'Log in',
         'form' => $form,
@@ -37,6 +37,7 @@ function post_login() {
     $destination = $_SESSION['redirect'] ? $_SESSION['redirect'] : "/index";
     restartSession();
     $_SESSION['user'] = $user;
+    $_SESSION['flash'] = "Login successful!";
     redirect($destination);
   }
 }
@@ -48,7 +49,7 @@ function get_logout() {
 
 function get_register() {
   renderTemplate(
-    "views/register_form.php",
+    "views/user_register.php",
     array(
       'title' => 'Create an account',
       'form' => array(),
@@ -97,7 +98,7 @@ function post_register() {
   $errors = verify_account($form);
   if ($errors) {
     renderTemplate(
-      "views/register_form.php",
+      "views/user_register.php",
       array(
         'title' => 'Create an account',
         'form' => $form,
