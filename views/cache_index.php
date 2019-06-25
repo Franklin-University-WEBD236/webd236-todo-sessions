@@ -72,7 +72,7 @@
 <?php  endif;?>
       
 <?php  if (isset($_SESSION['flash'])): ?>
-<div class="alert alert-success alert-dismissible fade show flash-message" role="alert" id="flash">
+<div class="alert alert-success alert-dismissible flash-message" role="alert" id="flash">
   <?php echo($_SESSION['flash']); ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -80,11 +80,11 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("div.flash-message").fadeIn(1000).delay(3000).fadeOut(1000);
+    $("div.flash-message").fadeTo(1000,0.7).delay(2000).fadeOut(1000);
   });
 </script>
 <?php  
-   unset($_SESSION['flash']);
+   //unset($_SESSION['flash']);
    endif;
 ?>
 

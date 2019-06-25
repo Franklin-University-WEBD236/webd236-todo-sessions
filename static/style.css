@@ -1,5 +1,4 @@
 html {
-  padding-top: 1em;
   position: relative;
   min-height: 100%;
 }
@@ -36,13 +35,5 @@ td.min {
   top: 5em; 
   left: 25%;
   width: 50%;
-  opacity: 0;
-  transition: 1s;
-}
-
-.flash-message-in {
-  opacity: 1;
-}
-.flash-message-out {
   opacity: 0;
 }

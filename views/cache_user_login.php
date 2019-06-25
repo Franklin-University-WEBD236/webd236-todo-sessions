@@ -80,11 +80,11 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#flash").addClass("flash-message-in").delay(3000).removeClass("flash-message-in").addClass("flash-message-out");
+    $("div.flash-message").fadeIn(1000).delay(3000).fadeOut(1000);
   });
 </script>
 <?php  
-   unset($_SESSION['flash']);
+   //unset($_SESSION['flash']);
    endif;
 ?>
 
