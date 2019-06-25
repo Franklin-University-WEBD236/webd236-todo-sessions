@@ -80,7 +80,7 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#flash").fadeIn("fast").delay(3000).fadeOut("fast");
+    $("#flash").addClass("flash-message-in").delay(3000).removeClass("flash-message-in").addClass("flash-message-out");
   });
 </script>
 <?php  
