@@ -32,9 +32,17 @@ td.min {
 }
 
 .flash-message {
-    position: fixed;
-    top: 5em; 
-    left: 25%;
-    width: 50%;
-    display: none;
+  position: fixed;
+  top: 5em; 
+  left: 25%;
+  width: 50%;
+  opacity: 0;
+  transition: 1s;
+}
+
+.flash-message-in {
+  opacity: 1;
+}
+.flash-message-out {
+  opacity: 0;
 }
