@@ -4,6 +4,8 @@
   <div class="col-lg-12">
 
 [[if (!isLoggedIn()): ]]
+  <h1>Welcome to the To Do List!</h1>
+  <p>The To Do List is your on
   <p>Nothing to see here! <a href="@@user/login@@">Log in</a> to see your ToDos.</p>
 [[ else: ]]
   

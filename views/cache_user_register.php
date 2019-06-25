@@ -80,7 +80,7 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("div.flash-message").fadeIn(1000).delay(2000).fadeOut(1000);
+    $("div.flash-message").fadeTo(1000,1).delay(2000).fadeOut(1000);
   });
 </script>
 <?php  

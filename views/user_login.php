@@ -7,6 +7,8 @@
       <div class="form-group">
         <label for="email">Email address</label>
         <input type="text" min="1" id="email" name="form[email]" class="form-control" placeholder="Enter email address" value="{{value($form['email'])}}" />
+      </div>
+      <div class="form-group">
         <label for="password">Password</label>
         <input type="password" min="1" id="password" name="form[password]" class="form-control" placeholder="Enter password" value="{{value($form['password'])}}" />
       </div>

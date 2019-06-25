@@ -80,7 +80,7 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("div.flash-message").fadeTo(1000,0.7).delay(2000).fadeOut(1000);
+    $("div.flash-message").fadeTo(1000,1).delay(2000).fadeOut(1000);
   });
 </script>
 <?php  
@@ -96,6 +96,8 @@
       <div class="form-group">
         <label for="email">Email address</label>
         <input type="text" min="1" id="email" name="form[email]" class="form-control" placeholder="Enter email address" value="<?php echo(value($form['email'])); ?>" />
+      </div>
+      <div class="form-group">
         <label for="password">Password</label>
         <input type="password" min="1" id="password" name="form[password]" class="form-control" placeholder="Enter password" value="<?php echo(value($form['password'])); ?>" />
       </div>

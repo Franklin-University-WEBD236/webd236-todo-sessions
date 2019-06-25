@@ -80,7 +80,7 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("div.flash-message").fadeIn(1000).delay(2000).fadeOut(1000);
+    $("div.flash-message").fadeTo(1000,1).delay(2000).fadeOut(1000);
   });
 </script>
 <?php  
@@ -93,6 +93,8 @@
   <div class="col-lg-12">
 
 <?php if (!isLoggedIn()): ?>
+  <h1>Welcome to the To Do List!</h1>
+  <p>
   <p>Nothing to see here! <a href="/user/login">Log in</a> to see your ToDos.</p>
 <?php  else: ?>
   

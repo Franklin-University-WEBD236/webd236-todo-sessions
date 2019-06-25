@@ -110,8 +110,10 @@ function post_register() {
   } else {
     $id = addUser($form['email1'], $form['password1'], $form['firstName'], $form['lastName']);
     restartSession();
-    $_SESSION['user'] = findUserById($id);
-    redirect("/index");
+    $user = findUserById($id);
+    $_SESSION['user'] = $user;
+    flash("Welcome to To Do List, {$user['firstName']}.");
+    redirectRelative("index");
   }
 }
 

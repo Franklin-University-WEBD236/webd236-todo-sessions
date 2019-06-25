@@ -1,5 +1,7 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
+DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `todo`;
 
 CREATE TABLE `user` (
   -- Note that storing passwords in plaintext like this is very, very bad.
