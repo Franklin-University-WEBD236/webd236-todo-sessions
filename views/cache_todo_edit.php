@@ -35,7 +35,7 @@
               <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo($_SESSION['user']['firstName']); ?> <?php echo($_SESSION['user']['lastName']); ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="/user/edit">Edit profile</a>
               <a class="dropdown-item" href="/user/logout">Logout</a>
             </div>
           </li>
@@ -70,6 +70,24 @@
   </div>
 </div>
 <?php  endif;?>
+      
+<?php  if (isset($_SESSION['flash'])): ?>
+<div class="alert alert-success alert-dismissible flash-message" role="alert" id="flash">
+  <?php echo($_SESSION['flash']); ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("div.flash-message").fadeTo(1000,1).delay(2000).fadeOut(1000);
+  });
+</script>
+<?php  
+   unset($_SESSION['flash']);
+   endif;
+?>
+
 
 <div class="row">
   <div class="col-lg-12">
