@@ -31,7 +31,7 @@ function post_login() {
     $destination = $_SESSION['redirect'] ? $_SESSION['redirect'] : "/index";
     restartSession();
     $_SESSION['user'] = $user;
-    $_SESSION['flash'] = "Login successful!";
+    flash("Login successful!");
     redirect($destination);
   }
 }
