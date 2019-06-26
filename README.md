@@ -4,4 +4,5 @@ Goals are:
   - add sessions, cookies
   - create, update, delete users
   - login/logout
+  - per-user todo managment
   - simple permissions
