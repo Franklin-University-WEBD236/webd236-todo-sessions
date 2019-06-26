@@ -33,6 +33,6 @@ function routeUrl() {
 }
 
 // note, GDPR says that you need to notify about cookies like this.
-session_set_cookie_params(60*60*24*14, '/', $_SERVER['SERVER_NAME'], true, false);
+session_set_cookie_params(60*60*24*14, '/', $_SERVER['SERVER_NAME'], true, true);
 session_start();
 routeUrl();
