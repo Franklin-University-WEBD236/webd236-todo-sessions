@@ -29,7 +29,7 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-<?php  if (isset($_SESSION['user'])): ?>
+<?php  if (isLoggedIn()): ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
               <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo($_SESSION['user']['firstName']); ?> <?php echo($_SESSION['user']['lastName']); ?>

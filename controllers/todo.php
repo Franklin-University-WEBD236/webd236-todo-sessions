@@ -67,8 +67,17 @@ function get_edit($id) {
 }
 
 function post_done($id) {
+  ensureLoggedIn();
   if (!$id) {
-      die("No todo specified");
+    die("No todo specified");
+  }
+  $todo = findToDoById($id);
+  if (!$todo) {
+    die("No todo with id {$id} found.");
+  }
+  
+  if ($todo['user_id'] != $_SESSION['user']['id']) {
+    die("Not todo owner");
   }
   
   toggleDoneToDo($id);
@@ -97,9 +106,19 @@ function validate_present($elements) {
 }
 
 function post_edit($id) {
+  ensureLoggedIn();
   if (!$id) {
     die("No todo specified");
   }
+  $todo = findToDoById($id);
+  if (!$todo) {
+    die("No todo with id {$id} found.");
+  }
+  
+  if ($todo['user_id'] != $_SESSION['user']['id']) {
+    die("Not todo owner");
+  }
+
   $errors = validate_present(array('description', 'done'));
   if ($errors) {
     die($errors);
@@ -111,13 +130,19 @@ function post_edit($id) {
 }
 
 function post_delete($id) {
+  ensureLoggedIn();
   if (!$id) {
     die("No todo specified");
   }
   $todo = findToDoById($id);
   if (!$todo) {
-    die("No todo found.");
+    die("No todo with id {$id} found.");
   }
+  
+  if ($todo['user_id'] != $_SESSION['user']['id']) {
+    die("Not todo owner");
+  }
+
   deleteToDo($id);
   flash("Deleted.");
   redirectRelative("index");
