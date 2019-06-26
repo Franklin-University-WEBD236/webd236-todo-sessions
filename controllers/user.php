@@ -11,12 +11,6 @@ function get_login() {
   );
 }
 
-/**
-INSERT INTO "user" VALUES(1,'nobody@nowhere.com','v@larM0rghul1s','Arya','Stark');
-INSERT INTO "user" VALUES(2,'ironborn@pyke.com','!r0nBorn','Theon','Greyjoy');
-INSERT INTO "user" values(3,'alwayspayshisdebts@casterlyrock.com','th3Imp','Tyrion','Lannister');
-*/
-
 function post_login() {
   $form = safeParam($_POST, 'form');
   $email = safeParam($form, 'email');
