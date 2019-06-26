@@ -38,7 +38,7 @@ function post_login() {
 
 function get_logout() {
   restartSession();
-  redirect('/index');
+  redirectRelative('index');
 }
 
 function get_register() {
