@@ -37,7 +37,7 @@ function isLoggedIn() {
 
 function ensureLoggedIn() {
   if (!isLoggedIn()) {
-    $_SESSION['redirect'] = $SERVER['REQUEST_URI'];
+    $_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
     redirectRelative("user/login");
     exit();
   }
