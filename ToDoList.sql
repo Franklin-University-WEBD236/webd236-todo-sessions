@@ -21,7 +21,7 @@ CREATE TABLE `todo` (
   description VARCHAR(50) NOT NULL,
   done INTEGER NOT NULL,
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER NOT NULL REFERENCES user(id)
+  user_id INTEGER NOT NULL REFERENCES user(id) ON DELETE CASCADE
 );
 
 INSERT INTO "todo" VALUES('Prepare a model 1 architecture example',0,2,4);
