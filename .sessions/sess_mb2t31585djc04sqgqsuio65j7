@@ -1,1 +1,1 @@
-user|a:5:{s:2:"id";s:1:"6";s:5:"email";s:15:"email@email.com";s:8:"password";s:9:"QWERTY123";s:9:"firstName";s:5:"Trent";s:8:"lastName";s:5:"Seitz";}
+token|s:64:"a9a35ecc8e1b5256cf700c7f311f3f1b17650cfa4aeeaa379fd1426d9d972ac8";pla3412_1_9_7_1_salt|s:20:"3Uo8S9tUZF8KsKx1GTPE";pla3412_1_9_7_1password|s:32:"755abcd888bd4f2ae1d8455fd3008616";pla3412_1_9_7_1currentDB|a:5:{s:4:"path";s:14:"./ToDoList.db3";s:4:"name";s:12:"ToDoList.db3";s:8:"writable";b:1;s:12:"writable_dir";b:1;s:8:"readable";b:1;}
